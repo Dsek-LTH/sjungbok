@@ -1,0 +1,6 @@
+
+heading_prefix "{\\large\\sffamily\\bfseries "
+heading_suffix "}\\nopagebreak\n"
+delim_0 " \\hfill "
+delim_1 " \\hfill "
+delim_2 " \\hfill "
