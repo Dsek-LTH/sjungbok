@@ -9,6 +9,6 @@ Senast uppdaterad inför beställning Juni 2019, efter det endast mindre fixes.
 * Om du vill att sjungboken ska vara upp till senaste standard kan du:
    1. uppdatera raden där det står "Tretiosex råsa år - och ett brunt..." med rätt antal år
    2. lägga till de senaste versionerna av Ebbe (fråga din Sångarstridsförman) under Dryga visor.
-   3. eventuellt lägga till nya låtar som sektionen blivit relevanta sen sist
+   3. eventuellt lägga till nya låtar som blivit relevanta sen sist
 
 * Filer till omslaget finns under ```/omslag```
