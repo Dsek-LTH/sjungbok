@@ -12,3 +12,11 @@ Senast uppdaterad inför beställning Juni 2019, efter det endast mindre fixes.
    3. eventuellt lägga till nya låtar som blivit relevanta sen sist
 
 * Filer till omslaget finns under ```/omslag```
+
+## Medverkande
+Vi som omvandlat sångboken till LaTeX är:
+* [Fabian Sundholm](https://github.com/finurligt/) - Innehåll
+* [Annie Tallund](https://github.com/annietllnd/) - Innehåll
+* [Jenny Martinsson](https://github.com/dic15jma/) - Innehåll
+* [Oskar Damkjaer](https://github.com/OskarDamkjaer/) - Automatisering
+* Emmy Edfors - Omslag
