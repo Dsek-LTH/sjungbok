@@ -1,7 +1,7 @@
 # D-sektionens sångbok
 D-sektionens sångbok, även känd som sjungbok.
 
-Senast uppdaterad inför beställning Juni 2019, efter det endast mindre fixes.
+Senast uppdaterad inför beställning till jubileum Januari 2022.
 
 ## Inför beställning
 * Antalet sidor kan justeras genom att lägga till sidor i "Fria visor"-delen, det görs med kommandot ```\fillInPages{16}``` någonstans i slutet av ```main.tex```.
