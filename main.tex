@@ -9,20 +9,19 @@
 \usepackage{graphicx}
 \usepackage{parselines}
 \usepackage[none]{hyphenat}
-\usepackage{gensymb} %för att kunna använda symboler som grader
-\usepackage{multicol} %För att få dubbla kolumner hos EBBE
-\usepackage{ragged2e} %För att justifya text (dvs högercentrering och liknande
-\usepackage{pdfpages} %för att inkludera pdf-bilder
+\usepackage{gensymb}  % För att kunna använda symboler som grader
+\usepackage{multicol} % För att få dubbla kolumner hos EBBE
+\usepackage{ragged2e} % För att justifya text (dvs högercentrering och liknande)
+\usepackage{pdfpages} % för att inkludera pdf-bilder
 \usepackage[export]{adjustbox} % Ram på bilder
-\usepackage{imakeidx} % registret
-\usepackage[titles]{tocloft} % för att ändra storlek på innehållsförteckningen
+\usepackage{imakeidx} % Registret
+\usepackage[titles]{tocloft} % För att ändra storlek på innehållsförteckningen
 \usepackage{textcomp} % ~
-\usepackage{pgffor, ifthen} %bortsupen
+\usepackage{pgffor, ifthen} % Bortsupen
 \usepackage{fancyhdr}
 
 \fancypagestyle{main}{
   \fancyhf{} % clear all header fields
-  %\fancyhead[LE]{\footnotesize\scshape\leftmark}
   \fancyhead[RO]{\hfill \footnotesize\scshape\leftmark \hfill}
   \fancyfoot[LE,RO]{\hfill \thepage \hfill}
   \renewcommand{\headrulewidth}{0 pt}
@@ -79,20 +78,18 @@
 \renewcommand*\contentsname{INNEHÅLL}
 \setcounter{tocdepth}{1}
 \setcounter{secnumdepth}{0}
-\renewcommand\cftsecfont{\normalsize}                    %Font på table of content
-\renewcommand\cftsecpagefont{\normalsize}                %Font på table of content
-\setlength{\cftbeforesecskip}{3pt}                       %vspace på table of content
+\renewcommand\cftsecfont{\normalsize}     % Font på table of content
+\renewcommand\cftsecpagefont{\normalsize} % Font på table of content
+\setlength{\cftbeforesecskip}{3pt}        % vspace på table of content
 
 
 \tolerance=700
-
-%\fancyfoot[R]{\thepage\ifodd\value{page}\hfill\value{page}\else\hfill\fi} %FUCK DETTA JAG GER UPP
 
 \begin{document}
 
 \thispagestyle{empty}
 \maketitle
-\thispagestyle{empty} %tar bort sidnumrering
+\thispagestyle{empty} % tar bort sidnumrering
 
 \begin{center}
 Trettionio råsa år - och ett brunt...
@@ -2288,8 +2285,6 @@ vi hunnit ta.
 \end{parse lines}
 
 \newpage
-%\includegraphics[height=0.2\textheight]{res/kretslopp.png}
-%\vspace*{-0.2\textheight}
 
 \begin{picture}(50,50) \put(155,0){\hbox{\includegraphics[height=0.15\textheight]{res/kretslopp.png}}} \end{picture}
 \vspace*{-0.20\textheight}
