@@ -1,5 +1,9 @@
 \documentclass{article}
-\usepackage[a6paper, total={105mm, 148mm},margin=30pt]{geometry}
+\usepackage[
+  a6paper,
+  total={105mm, 148mm},
+  margin=30pt
+]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{parselines}
@@ -8,60 +12,61 @@
 \usepackage{multicol} %För att få dubbla kolumner hos EBBE
 \usepackage{ragged2e} %För att justifya text (dvs högercentrering och liknande
 \usepackage{pdfpages} %för att inkludera pdf-bilder
-\usepackage[export]{adjustbox} %Border på bilder
-\usepackage{imakeidx}% registret
-%\usepackage{tocloft} %för att ändra storlek på innehållsförteckningen
-\usepackage[titles]{tocloft}
+\usepackage[export]{adjustbox} % Ram på bilder
+\usepackage{imakeidx} % registret
+\usepackage[titles]{tocloft} % för att ändra storlek på innehållsförteckningen
 \usepackage{textcomp} % ~
 \usepackage{pgffor, ifthen} %bortsupen
 \usepackage{fancyhdr}
 
-
-\fancypagestyle{main}{ 
-\fancyhf{} % clear all header fields
-%\fancyhead[LE]{\footnotesize\scshape\leftmark}
-\fancyhead[RO]{\hfill \footnotesize\scshape\leftmark \hfill}
-\fancyfoot[LE,RO]{\hfill \thepage \hfill}
-\renewcommand{\headrulewidth}{0 pt}
-\renewcommand{\footrulewidth}{0 pt}
+\fancypagestyle{main}{
+  \fancyhf{} % clear all header fields
+  %\fancyhead[LE]{\footnotesize\scshape\leftmark}
+  \fancyhead[RO]{\hfill \footnotesize\scshape\leftmark \hfill}
+  \fancyfoot[LE,RO]{\hfill \thepage \hfill}
+  \renewcommand{\headrulewidth}{0 pt}
+  \renewcommand{\footrulewidth}{0 pt}
 }
 
 \pagestyle{main}
 
-
-
 \newcommand{\bortsupen}[3][\empty]{%
-    \noindent \vspace{0pt}\\
-    \foreach \n in {1,...,#2}{%
-        \ifthenelse{\equal{#1}{\empty}}
-            {\rule{#3}{0.5pt}\\}
-            {\rule{#3}{0.5pt}\vspace{#1}\\}
-        }
+  \noindent \vspace{0pt}\\
+  \foreach \n in {1,...,#2}{%
+    \ifthenelse{\equal{#1}{\empty}}
+               {\rule{#3}{0.5pt}\\}
+               {\rule{#3}{0.5pt}\vspace{#1}\\}
+  }
 }
 
 \newcommand{\fillInPages}[1]{
-\newcount\ipp
-\ipp=0
-\newcount\numberOfPages
-\numberOfPages=#1 
-\loop
-\newpage
-\mbox{}
-\advance\ipp by1
-\ifnum\ipp<\numberOfPages\repeat
+  \newcount\ipp
+  \ipp=0
+  \newcount\numberOfPages
+  \numberOfPages=#1
+  \loop
+  \newpage
+  \mbox{}
+  \advance\ipp by1
+  \ifnum\ipp<\numberOfPages\repeat
 }
 
-
-
-
-
-\makeindex[name=alfa, columns=1, title=Alfabetiskt Register, intoc, options = {-s styleAlfa.ist}]% också register - alfabetiskt
-\makeindex[name=anfa, columns=1, title=Analfabetiskt Register, intoc, options = {-s styleAlfa.ist}]% också register - "analfabetiskt" eller början av sången
-
-
+\makeindex[ % Alfabetiskt register
+  name=alfa,
+  columns=1,
+  title=Alfabetiskt Register,
+  intoc,
+  options = {-s styleAlfa.ist}
+]
+\makeindex[ % Analfabetiskt register -- början av sången
+  name=anfa,
+  columns=1,
+  title=Analfabetiskt Register,
+  intoc,
+  options = {-s styleAlfa.ist}
+]
 
 \title{\fontsize{20}{20} \selectfont D-sektionens sångbok \vspace{-40pt}}
-
 
 \author{}
 \date{}
@@ -82,33 +87,21 @@
 
 %\fancyfoot[R]{\thepage\ifodd\value{page}\hfill\value{page}\else\hfill\fi} %FUCK DETTA JAG GER UPP
 
-
-
-
-
 \begin{document}
-
 
 \thispagestyle{empty}
 \maketitle
 \thispagestyle{empty} %tar bort sidnumrering
 
 \begin{center}
-Trettionio råsa år - och ett brunt... 
+Trettionio råsa år - och ett brunt...
 \end{center}
-\vspace{1mm} %den flyttar upp väldigt mycket mer om jag inte har med detta
-
-
+\vspace{1mm} % Den flyttar upp väldigt mycket mer om jag inte har med detta
 
 \begin{center}
-   %\includepdf[width=0.1\textwidth]{D-symbol.pdf}
    \includegraphics[width=0.6\textwidth]{res/D-symbol.pdf}
 \end{center}
 
-
-
-%\fancyhf{} % sets both header and footer to nothing
-%\renewcommand{\headrulewidth}{0pt}
 \newpage
 Tillhör:
 \newpage
@@ -125,6 +118,7 @@ det vara på den. Vill man bära handskar till klänningen
 går det bra, men glöm inte att ta av dem när du äter.
 Både han och hon kan istället bära hembygdsdräkt eller
 militär högtidsdräkt.
+
 \subsubsection{Smoking}
 Då klädkoden är smoking, innebär det för honom en svart
 eller mörkblå sådan. Förutom smokingjacka och byxa
@@ -132,6 +126,7 @@ ingår en särskild skjorta samt svart fluga. Hon har en lång
 klänning, men den behöver inte vara lika elegant som vid
 högtidsklädsel. Den får gärna vara festlig och glittrig.
 Även kortare klänning - dock inte kortkort - går bra.
+
 \subsubsection{Mörk kostym}
 Han bär en mörkblå, mörkgrå eller svart kostym. Till det
 har han en vit skjorta och sidenslips eller fluga i valfri färg
@@ -210,7 +205,9 @@ som alltid börjar prick. Då det är helg eller kvällstid (dvs.
 efter kl 18:00) gäller dubbelkvart, alltså 30 minuter efter
 utsatt tid. Om det står “prick” (.) efter klockslaget,
 “prickprick” (..) då det gäller helgdag eller kvällstid, eller
-om klockslaget skrivs med minutangivelse (till exempel klockan 13:00), så börjar evenemanget på klockslaget.
+om klockslaget skrivs med minutangivelse (till exempel klockan 13:00), så börjar
+evenemanget på klockslaget.
+
 \newpage
 \subsubsection{Teknologmössan}
 Teknologmössan får endast bäras av den som genomgått
@@ -301,19 +298,20 @@ Rosa, jag älskar dig!
 \end{parse lines}
 \vspace*{\fill}
 
-\noindent {\textit{D-sektionens sektionshymn. Rosa sjunges alltid som färgen råsa. Rimmen modifieras därefter.}}
+\noindent {\textit{D-sektionens sektionshymn. Rosa sjunges alltid som färgen
+    råsa. Rimmen modifieras därefter.}}
 
 \newpage
 \null
+
 \newpage
+
 \thispagestyle{empty}
 \null
 \vfill
 \begin{center}
-   
-   \includegraphics[width=1.0\textwidth]{res/bordsvisor.png}
-   \section{Bordsvisor}
-   
+  \includegraphics[width=1.0\textwidth]{res/bordsvisor.png}
+  \section{Bordsvisor}
 \end{center}
 \vfill
 \newpage
@@ -366,14 +364,15 @@ Av längtan vi tryckas
 av trängtan att lyckas.
 Vi nu med bravur häller ur, eller hur?
 
-Vi ger titt som tätt strupen sitt: 
+Vi ger titt som tätt strupen sitt:
 Supen stritt
 skall forsa, och snart får sig tarmen vår
-varm en tår. 
+varm en tår.
 Er öven i seder och söven sen ned er
 vid denna protest-bullerfest: Full är bäst!
 \end{parse lines}
 \vspace{-0.2cm}
+
 \subsection{Köttet kommer}
 \textit{Mel: Vals ur Glada Änkan}\\
 \index[alfa]{Köttet kommer}
@@ -385,7 +384,7 @@ Gnäggar inte springer inte, det är dött.
 Skål för alla oxar! Skål för varje säl.
 Skål för alla hästar som vi slått ihjäl!
 
-Raj raj raj raj raj... 
+Raj raj raj raj raj...
 \end{parse lines}
 \newpage
 
@@ -472,7 +471,7 @@ och när som kilten faller
 
 Hurra! Nu ska man äntligen få röra på benen.
 Hela stammen jublar och det spritter i grenen.
-Tänk, att än en gång få spränga 
+Tänk, att än en gång få spränga
 fram på Brunte i galopp!
 Din doft, o kära Brunte, är, trots brist i hygienen,
 för en vild mongol minst lika ljuv som syrenen.
@@ -492,7 +491,7 @@ inom brandmansyrket som jag tycker
 det är nån nytta med.
 Jag målar för mitt inre upp den härliga scenen:
 blodrött mitt i brandgult. Ej ens prins Eugen en
-lika mustig vy kan måla, 
+lika mustig vy kan måla,
 ens om han målade med sked.
 
 Ja, för nu ska vi ut och härja...
@@ -527,7 +526,7 @@ stadsparksdammen full av bayerskt öl,
 konjak i varenda rännsten
 och punsch i varendaste pöl.
 
-Och mera öl... 
+Och mera öl...
 \end{parse lines}
 
 
@@ -539,18 +538,18 @@ Och mera öl...
 \begin{parse lines}[\noindent]{#1\\}
 
 En viking vill ha livets vann,
-hurra, hurra! 
+hurra, hurra!
 Den hastigt i mitt svalg försvann,
-hurra, hurra! 
-Till kalv, till oxe, till fisk, till fläsk, 
+hurra, hurra!
+Till kalv, till oxe, till fisk, till fläsk,
 när somliga bara dricker läsk,
-då vill alla sanna vikingar ha en bäsk. 
+då vill alla sanna vikingar ha en bäsk.
 
 När vi druckit bäsken slut,
 tragik, tragik!
 Då bäres varje viking ut,
 som lik sig lik.
-Och sen, om vi vaknar, vi sjunger en bit, 
+Och sen, om vi vaknar, vi sjunger en bit,
 sen korkar vi upp Skånes akvavit.
 Skål för alla vikingar som kom hit!
 \end{parse lines}
@@ -651,18 +650,18 @@ Vomera is...
 
 Gästerna de springer i pausen på dass,
 eftersom de fyllt sina magar så pass.
-Maten den har smakat, 
+Maten den har smakat,
 jag har tatt flera lass,
-men vet att nu nalkas det 
+men vet att nu nalkas det
 hjortron och glass!
 
-Kurre, kurre kurre, 
+Kurre, kurre kurre,
 min mage känns så stinn.
-Jag ångrar nu så bittert 
+Jag ångrar nu så bittert
 att jag har spänt mitt skinn.
-Men banta kan jag glömma, 
+Men banta kan jag glömma,
 det är ju finsittning det här!
-Bältet jag spänner upp, 
+Bältet jag spänner upp,
 gör plats för mer dessert!
 \end{parse lines}
 
@@ -778,11 +777,13 @@ Så sjung mjau, mjau, kissemisse mjau
 Ja, sjung mjau, mjau, kissemisse mjau
 Om vi jamar hela natten
 desto gladare blir skratten
-efter slatten får rabatten en visit. 
+efter slatten får rabatten en visit.
 \end{parse lines}
 
 
-\begin{picture}(50,50) \put(150,-45){\hbox{\includegraphics[scale=0.35]{res/katt.png}}} \end{picture}
+\begin{picture}
+  (50,50) \put(150,-45){\hbox{\includegraphics[scale=0.35]{res/katt.png}}}
+\end{picture}
 
 
 \newpage
@@ -853,14 +854,14 @@ och väntar på resultatet.
 \index[anfa]{Morgonstund med smak av döda bävrar...}
 \begin{parse lines}[\noindent]{#1\\}
 
-Morgonstund med smak av döda bävrar 
-frukostmorgonen är över oss 
-hur vi alla stretar, hur vi vägrar 
+Morgonstund med smak av döda bävrar
+frukostmorgonen är över oss
+hur vi alla stretar, hur vi vägrar
 så går solen lik förbannat opp
 
-Snart är dagen här med hemska plågor 
-huvudvärk, yrsel, elände men 
-det finns faktiskt ett glas som dej kan rädda 
+Snart är dagen här med hemska plågor
+huvudvärk, yrsel, elände men
+det finns faktiskt ett glas som dej kan rädda
 Treo-comp vår frälsare och vän.
 \end{parse lines}
 
@@ -915,9 +916,9 @@ Leve livet! Skål och botten opp!
 \index[anfa]{På gator som trampats av Ask och von Platen...}
 \begin{parse lines}[\noindent]{#1\\}
 
-På gator som trampats av Ask och von Platen 
-På stenar som blickat på Broman, Piraten 
-På Lundagårds träd som har skuggat Tegnér 
+På gator som trampats av Ask och von Platen
+På stenar som blickat på Broman, Piraten
+På Lundagårds träd som har skuggat Tegnér
 På allt har jag kissat och lustfyllt blött ner
 
 \textit{Sjunges med ett långt s-ljud efter varje rad för att simulera urinering.}
@@ -1015,17 +1016,17 @@ Jag äter hundmat, och klarar av ekonomin.
 Jag äter hundmat, det kan va lagat eller rått.
 Jag äter hundmat, åsså är det gott.
 
-Men vänner har jag inga kvar – 
+Men vänner har jag inga kvar –
 förutom grannens jycke.
 Vi brukar äta ute och vi delar varje stycke,
 Och bjuder nån på middag
 tar jag hem i doggybag,
-men tar nån skålen från mig 
+men tar nån skålen från mig
 blir jag arg och reser ragg.
 
 Jag äter hundmat, med läckert kycklingkött i bit.
 Jag äter hundmat, och Frolic är min favorit.
-Jag äter hundmat, det passar bra när man är pank. 
+Jag äter hundmat, det passar bra när man är pank.
 Jag äter hundmat, och pälsen den blir blank.
 
 Ge mig Frolic och en klapp, eller lite Chappi.
@@ -1065,15 +1066,15 @@ kastat oss i klorad sprit
 Efter många kallsupar har
 snart hela bassängen tömts
 Festen den har nått till botten
-där den sista tåren gömts. 
+där den sista tåren gömts.
 
-Dyker ner för sista skålen 
+Dyker ner för sista skålen
 höjer mitt glas med simmig blick
 kisar mot de stora hålen
 är i ganska dåligt skick.
 
 Ner i magen rutschar nu slatten
-alla bekymmer spolas bort 
+alla bekymmer spolas bort
 Vi har skoj med livets vatten.
 Aqua-kul det river gott
 \end{parse lines}
@@ -1089,7 +1090,7 @@ Jag drömmer om en vit vecka.
 Sju dagar utan alkohol.
 Tänk att bara skåla i juice och Cola och sedan minnas allt man gjort.
 
-Jag drömmer om en vit vecka, 
+Jag drömmer om en vit vecka,
 det finns en gräns för vad jag tål.
 Jag vill inte dricka mera sprit så låt nästa vecka vara vit.
 \end{parse lines}
@@ -1174,26 +1175,26 @@ Hörde jag dubbel skål? JA!
 \index[anfa]{Jag hulkar i mig spyorna...}
 \begin{parse lines}[\noindent]{#1\\}
 
-Jag hulkar i mig spyorna, 
-och sedan med en gaffel, 
-ur munnen min jag plockar fram, 
-en extra stor falafel. 
+Jag hulkar i mig spyorna,
+och sedan med en gaffel,
+ur munnen min jag plockar fram,
+en extra stor falafel.
 
-Sen baklänges jag vinglar bort, 
-till efterfest av bästa sort. 
-Jag spottar ut shot, efter shot, efter shot 
-ja så här finemang har jag aldrig mått! 
+Sen baklänges jag vinglar bort,
+till efterfest av bästa sort.
+Jag spottar ut shot, efter shot, efter shot
+ja så här finemang har jag aldrig mått!
 
-(Å shot, shot, shot, shot. Å shot, shot, shot, shot.) 
+(Å shot, shot, shot, shot. Å shot, shot, shot, shot.)
 
-Till Lundagård jag rullar sen, 
-och ställer någons cykel. 
-På klubbens dansgolv hittar jag. 
-min plånbok och min nyckel. 
+Till Lundagård jag rullar sen,
+och ställer någons cykel.
+På klubbens dansgolv hittar jag.
+min plånbok och min nyckel.
 
-Fem öl, sju snaps, en flaska vin, 
-jag häller upp ur halsen min. 
-Ikväll ska jag plugga det lovar jag dig, 
+Fem öl, sju snaps, en flaska vin,
+jag häller upp ur halsen min.
+Ikväll ska jag plugga det lovar jag dig,
 men en endaste öl kan man unna sig!
 \end{parse lines}
 
@@ -1378,7 +1379,7 @@ och jag slirade i svängen
 
    \includegraphics[width=0.8\textwidth]{res/snapsvisor.jpg}
    \section{Snapsvisor}
-   
+
 \end{center}
 \vfill
 \newpage
@@ -1487,7 +1488,7 @@ stjäla ur kollekten,
 det är FEL och det är viktigt!
 
 $\vert\vert$: Men att sjunga en snutt,
-och ta sig en hutt - 
+och ta sig en hutt -
 Det är bara RÄTT och riktigt! :$\vert\vert$
 \end{parse lines}
 
@@ -1749,7 +1750,7 @@ Nu dags taga sig en snaps strax,
 som din kropp tar opp och låter rinna ner.
 Och ger dig smak för flera
 
-Ditt liv, blott ett tidsfördriv, 
+Ditt liv, blott ett tidsfördriv,
 du kastar ner en kask och lever glatt och ler,
 när fler du ser.
 
@@ -1770,10 +1771,10 @@ Gapa, svälj och njut!
 \null
 \vfill
 \begin{center}
-   
+
    \includegraphics[width=0.8\textwidth]{res/vinvisor.jpg}
    \section{Vinvisor}
-   
+
 \end{center}
 \vfill
 \newpage
@@ -1894,11 +1895,11 @@ Hon sa "Mitt barn, dela den med vännerna.
 För den är faktiskt ganska stor."
 
 Magnumflaskan Åkesson,
-du var så stor och tung. 
+du var så stor och tung.
 Jag gick runt med dig i hand,
 och i Dalby var jag kung.
 
-Magnumflaskan Åkesson, 
+Magnumflaskan Åkesson,
 din kork försvann i skyn.
 Men jag drack dig bara själv.
 Och kräktes i hela byn.
@@ -1926,10 +1927,10 @@ på någon dag man gör sin alkohol i spann.
 \null
 \vfill
 \begin{center}
-   
+
    \includegraphics[width=1.0\textwidth]{res/olvisor.jpg}
    \section{Ölvisor}
-   
+
 \end{center}
 \vfill
 \newpage
@@ -1976,13 +1977,13 @@ Nej, öl för fulla muggar vill jag ha.
 
 Inatt jag drömde något som,
 jag aldrig drömt förut
-Jag drömde det var strejk på Pripps 
+Jag drömde det var strejk på Pripps
 och alla ölen var slut.
-Jag drömde om en jättesal 
+Jag drömde om en jättesal
 där ölen stod på rad
-Jag drack sådär en femton 
+Jag drack sådär en femton
 öl och reste mig och sa:
-"Man kan ha roligt utan sprit, 
+"Man kan ha roligt utan sprit,
 men det är dumt att chansa."
 \end{parse lines}
 
@@ -2244,10 +2245,10 @@ nöj dig med salsa.
 \null
 \vfill
 \begin{center}
-   
+
    \includegraphics[width=0.9\textwidth]{res/punschvisor.jpg}
    \section{Punschvisor}
-   
+
 \end{center}
 \vfill
 \newpage
@@ -2286,7 +2287,7 @@ vi hunnit ta.
 \end{parse lines}
 
 \newpage
-%\includegraphics[height=0.2\textheight]{res/kretslopp.png} 
+%\includegraphics[height=0.2\textheight]{res/kretslopp.png}
 %\vspace*{-0.2\textheight}
 
 \begin{picture}(50,50) \put(155,0){\hbox{\includegraphics[height=0.15\textheight]{res/kretslopp.png}}} \end{picture}
@@ -2390,10 +2391,10 @@ att bli full på kolhydrat.
 \null
 \vfill
 \begin{center}
-   
+
    \includegraphics[width=0.9\textwidth]{res/hyllningsvisor.jpg}
    \section{Hedrande visor}
-   
+
 \end{center}
 \vfill
 \newpage
@@ -2442,7 +2443,7 @@ såsom vi har för vår kära D-sektion.
 \end{parse lines}
 
 \noindent\textit{Skrevs till 20-års jubileumet, men sista versen skrevs om till 30-års jubileumet, och sedemera även till 40-årsjubileumet:
-} 
+}
 
 \noindent\textit{preg\_replace(”tjugo”, ”trettio”, \$sang);
 }
@@ -2492,7 +2493,7 @@ Jaaarrr
 \index[anfa]{Vem e’ störst o bäst i Skåne?}
 \begin{parse lines}[\noindent]{#1\\}
 
-Vem e’ störst o bäst i Skåne? 
+Vem e’ störst o bäst i Skåne?
 Vem e’ kung på LTH? ”ja LTH”
 Ja de’ e’ Data-InfoCom
 Som hela festen drar igång
@@ -2507,9 +2508,9 @@ Tacka Gud för Data-InfoCom
 \index[anfa]{D-sektionen, vi gömmer oss för solen...}
 \begin{parse lines}[\noindent]{#1\\}
 
-D-sektionen 
+D-sektionen
 Vi gömmer oss för solen
-D-sek har källarfest 
+D-sek har källarfest
 Ja D-sek är bäst
 \end{parse lines}
 
@@ -2657,7 +2658,7 @@ jag kodar C.
 Mitt liv är stressigt,
 jag kuggar tentor.
 Min själ är rosa,
-jag  läser D! 
+jag  läser D!
 \end{parse lines}
 
 
@@ -2668,10 +2669,10 @@ jag  läser D!
 \null
 \vfill
 \begin{center}
-   
+
    \includegraphics[width=0.9\textwidth]{res/sektionsvisor.png}
    \section{Sektionsvisor}
-   
+
 \end{center}
 \vfill
 \newpage
@@ -2684,7 +2685,7 @@ jag  läser D!
 
 Teknisk Fysik är mössbeklädda töntar
 fula flickor och en samling mammas pojkar.
-Liknar mest en televerksbil, 
+Liknar mest en televerksbil,
 som gått för många mil
 En teknisk fossil!
 
@@ -2738,7 +2739,7 @@ för det är vi som går Maskin
 Brand, Lant, Väg och Vatten,
 Störst på LTH
 Ingenting kan stoppa oss,
-V-sek allez allez 
+V-sek allez allez
 \end{parse lines}
 
 
@@ -2781,7 +2782,7 @@ Vi är kemister och vi är allra bäst!
 
 För vi är ING från sundets pärla,
 och det är fest idag igen,
-och vi ska supa hela natten lång 
+och vi ska supa hela natten lång
 och sjunga denna sång!
 
 Raj-di-daj-daj-daj…
@@ -2801,7 +2802,7 @@ Vi bränner sprit uti KC:G
 Turkos turkos, så gör dubbel-W
 Mitt glas är två för att jag är sne!
 
-$\vert\vert$: Simma sí, ah simma, 
+$\vert\vert$: Simma sí, ah simma,
 ah simma simma simma :$\vert\vert$ (4ggr)
 \end{parse lines}
 
@@ -2812,14 +2813,14 @@ ah simma simma simma :$\vert\vert$ (4ggr)
 \index[anfa]{Bortom vägar och vatten...}
 \begin{parse lines}[\noindent]{#1\\}
 
-Bortom vägar och vatten, 
+Bortom vägar och vatten,
 långt långt över Maskin
-innan Brand hunnit släckas, 
+innan Brand hunnit släckas,
 blickar vi ner på Kemi.
 Bam bam bam!
-Stolta står vi och väntar, 
+Stolta står vi och väntar,
 tills Elektro gjort sin sorti,
-för vi är bästa sektionen, 
+för vi är bästa sektionen,
 och vi älskar vårat I!
 \end{parse lines}
 
@@ -2828,10 +2829,10 @@ och vi älskar vårat I!
 \null
 \vfill
 \begin{center}
-   
+
    \includegraphics[width=0.8\textwidth]{res/dchip.jpg}
    \section{D-Chip}
-   
+
 \end{center}
 \vfill
 \newpage
@@ -2863,7 +2864,7 @@ men nu har vi rymt (alt. här får ni en skymt)
 
 Å ganska råsa är vi här
 så sjung nu så högt som rösten bär
-för datatjejer 
+för datatjejer
 här har ni grejer
 D-Chip är grymt!
 \end{parse lines}
@@ -2877,7 +2878,7 @@ D-Chip är grymt!
 
 Om jag lär mig alla namnen,
 och Spritbolagets svans,
-Om jag lär mig nollevisan, 
+Om jag lär mig nollevisan,
 skyddar chepsen med mitt liv.
 
 Om jag köper mig en ouvve,
@@ -2886,7 +2887,7 @@ Om jag respekterar staben,
 lär mig våran nolledans.
 
 $\vert\vert$: Vill du koda med mig då? Om sanningen ska fram?
-Vill du koda med mig då? Vill du koda med mig? :$\vert\vert$ 
+Vill du koda med mig då? Vill du koda med mig? :$\vert\vert$
 
 Om jag lär mig dricka minttu,
 fast det faktiskt smakar skit.
@@ -2899,7 +2900,7 @@ och det kommer säljas dricka
 hashtag omduvill”
 
 $\vert\vert$: Vill du koda med mig då? Om sanningen ska fram?
-Vill du koda med mig då? Vill du koda med mig? :$\vert\vert$ 
+Vill du koda med mig då? Vill du koda med mig? :$\vert\vert$
 \end{parse lines}
 \subsection{Microchipvisa 2000}
 \textit{Mel: Fångad av en stormvind}\\
@@ -2949,10 +2950,10 @@ på väg mot cyberland
 \null
 \vfill
 \begin{center}
-   
+
    \includegraphics[width=1.0\textwidth]{res/nordigavisor.jpg}
    \section{Nördiga visor}
-   
+
 \end{center}
 \vfill
 \newpage
@@ -2960,9 +2961,9 @@ på väg mot cyberland
 \subsection{IQ-test}
 \vfill
 \begin{center}
-   
+
    \includegraphics[width=1.0\textwidth]{res/iqtest.png}
-   
+
 \end{center}
 \vfill
 \newpage
@@ -3282,9 +3283,9 @@ Jag vill bli civilingenjör!
 
 \vfill
 \begin{center}
-   
+
    \includegraphics[width=1.0\textwidth]{res/eldiagram.png}
-   
+
 \end{center}
 \vfill
 
@@ -3315,7 +3316,7 @@ som vi kallar bella Scala!
 \null
 \vfill
 \begin{center}
-   
+
    \includegraphics[width=1.0\textwidth]{res/sallskapsvisor.jpg}
    \section{Sällskapsvisor}
 \end{center}
@@ -3330,20 +3331,20 @@ som vi kallar bella Scala!
 \index[anfa]{Förr när man skulle bort...}
 \begin{parse lines}[\noindent]{#1\\}
 
-Förr när man skulle bort 
-lång väg såväl som kort 
-fick man ta cykeln eller gå 
+Förr när man skulle bort
+lång väg såväl som kort
+fick man ta cykeln eller gå
 nu är det inte så
 
 Fööör...
-Nu kan vi åka buss 
-förarn bestämmer kurs 
+Nu kan vi åka buss
+förarn bestämmer kurs
 Fönstren är många, ratten rund
 här i vår buss från Lund
 
-Nu ska vi leka bin 
-här i vår busskabin 
-Buzz, buzz, buzz, buzz, buzz, buzz, buzz, buzz 
+Nu ska vi leka bin
+här i vår busskabin
+Buzz, buzz, buzz, buzz, buzz, buzz, buzz, buzz
 buzz, buzz, buzz, åka buss!
 
 \end{parse lines}
@@ -3381,9 +3382,9 @@ Varva fest med studier, sen kommer kvalen!
 \index[anfa]{Skandal, skandal, skandal, skandal...}
 \begin{parse lines}[\noindent]{#1\\}
 
-Skandal, skandal, skandal, skandal. 
-Skandal, skandal, skandal. 
-Skandal, skandal, skandal, skandal. 
+Skandal, skandal, skandal, skandal.
+Skandal, skandal, skandal.
+Skandal, skandal, skandal, skandal.
 Skandal, skandal, skandal.
 \end{parse lines}
 
@@ -3397,7 +3398,7 @@ Skandal, skandal, skandal.
 Grå häst
 Jag har skaffat en
 Grå häst
-Den är född av en 
+Den är född av en
 Grå häst
 Den har fyra ben
 Grå häst, nu så har den blivit en
@@ -3581,7 +3582,7 @@ Badda bam bam BOOM!
 
    \includegraphics[width=0.8\textwidth]{res/gamlavisor.png}
    \section{Gamla visor}
-   
+
 \end{center}
 \vfill
 \newpage
@@ -3779,7 +3780,7 @@ DIN MAMMA!!!
 \null
 \vfill
 \begin{center}
-   
+
    \includegraphics[width=1.0\textwidth]{res/drygavisor.jpg}
    \section{Dryga visor}
 \end{center}
@@ -3791,15 +3792,15 @@ DIN MAMMA!!!
 \index[alfa]{Ebbe 1988}
 \index[anfa]{Ebbe Ebbe Ebbe...}
 \begin{parse lines}[\noindent]{#1\\}
-Ebbe Ebbe Ebbe, 
+Ebbe Ebbe Ebbe,
 Ebbe, Ebbe.
-Ebbe Ebbe Ebbe, 
+Ebbe Ebbe Ebbe,
 Ebbe, Ebbe.
 Han ville bli polis.
 
-Ebbe Ebbe Ebbe, 
+Ebbe Ebbe Ebbe,
 Ebbe,  Ebbe.
-Ebbe Ebbe Ebbe, 
+Ebbe Ebbe Ebbe,
 Ebbe,  Ebbe.
 Han samlade bevis.
 \end{parse lines}
@@ -3808,15 +3809,15 @@ Han samlade bevis.
 \index[alfa]{Abbe 1989}
 \index[anfa]{Abbe Abbe Abbe...}
 \begin{parse lines}[\noindent]{#1\\}
-Abbe Abbe Abbe, 
+Abbe Abbe Abbe,
 Abbe,  Abbe.
-Abbe Abbe Abbe, 
+Abbe Abbe Abbe,
 Abbe,  Abbe.
 Var nollegeneral.
 
-Abbe Abbe Abbe, 
+Abbe Abbe Abbe,
 Abbe,  Abbe.
-Abbe Abbe Abbe, 
+Abbe Abbe Abbe,
 Abbe,  Abbe.
 Han gjorde stor skandal.
 \end{parse lines}
@@ -4111,7 +4112,7 @@ Då tar jag mig en tår.
 \begin{parse lines}[\noindent]{#1\\}
 Ett å två å tre å,
 fyra, fem, sex.
-Sju å åtta, nio, 
+Sju å åtta, nio,
 elva, tretton.
 Ett mattegeni
 
@@ -4126,13 +4127,13 @@ Jag går ekonomi!
 \index[alfa]{IP 2010}
 \index[anfa]{IP IP IP...}
 \begin{parse lines}[\noindent]{#1\\}
-IP IP IP, 
+IP IP IP,
 IP, IP.
 IP IP IP,
 IP, IP.
 Mitt favvoprotokoll
 
-IP IP IP, 
+IP IP IP,
 IP, IP.
 IP IP IP,
 IP, IP.
@@ -4143,15 +4144,15 @@ På adressen har jag koll
 \index[alfa]{Tenta 2011}
 \index[anfa]{Tenta tenta tenta...}
 \begin{parse lines}[\noindent]{#1\\}
-Tenta tenta tenta, 
+Tenta tenta tenta,
 tenta, tenta.
-Tenta tenta tenta, 
+Tenta tenta tenta,
 tenta, tenta.
 Utan ett annex
 
-Tenta tenta tenta, 
+Tenta tenta tenta,
 tenta, tenta.
-Tenta tenta tenta, 
+Tenta tenta tenta,
 tenta, tenta.
 Schemat blir komplex
 \end{parse lines}
@@ -4251,17 +4252,17 @@ Verkligen absolut
 \begin{parse lines}[\noindent]{#1\\}
 Välkomna till tentan
 här i kårgasque
-Häng av jackan här o 
+Häng av jackan här o
 stäng av telefonen.
 Inga hjälpmedel.
-Jag kan inte hitta 
-dig på listan. 
-Har du inte anmält 
+Jag kan inte hitta
+dig på listan.
+Har du inte anmält
 dig i laaaadok?
 Ladok var ju stängt
-Står du ej på listan, 
+Står du ej på listan,
 får jag be dig
-Lämna tentasalen, 
+Lämna tentasalen,
 ögonblickligen
 Ge dig genast av!
 \end{parse lines}
@@ -4298,10 +4299,10 @@ och det vill man.
 \index[anfa]{Min gode vän Jor-El...}
 \begin{parse lines}[\noindent]{#1\\}
 
-Min gode vän Jor-El, 
+Min gode vän Jor-El,
 är far till Superman.
 Super man som han blir man full som fan!
-Min gode vän Jor-El, 
+Min gode vän Jor-El,
 han dricker supersprit,
 men tål inte kryptonit!
 Kastar upp
@@ -4368,7 +4369,7 @@ Uti Kalmare stad,
 ja där finns det ingen kvast
 förrän lördagen.
 Hej dick! Hej dack!
-Jag slog i 
+Jag slog i
 och vi drack.
 Hej dickom dickom dack,
 hej dickom dickom dack.
@@ -4427,7 +4428,7 @@ Och skepparn som drack en flaska rom,
 han har nu drunknat i haven.
 Så kan det gå om man fått för mycke,
 om man för brännvin har fattat tycke.
-Vi som har kvar, vi resten tar. 
+Vi som har kvar, vi resten tar.
 \end{parse lines}
 
 
@@ -4493,7 +4494,7 @@ Receptet skriver jag på min blogg,
 så att andra ska kunna.
 En Rom-o-cola, fast utan Cola
 och mera rom, för vi ska ej snåla.
-En god idé, den blir succé 
+En god idé, den blir succé
 \end{parse lines}
 
 \vfill
@@ -4555,7 +4556,7 @@ Det satt en älg i en klyvartopp
 Förklädd i älgjaktens månad
 Han var befjädrad till horn och kropp
 Och skepparn blev smått förvånad
-"Jag är en mås, goa skepparn" ljög den 
+"Jag är en mås, goa skepparn" ljög den
 förklädda älgen, därefter flög den
 Mjukt föll han sen
 På skepparen
@@ -4655,7 +4656,7 @@ Men utav akvavit...
 Vi gingo ner till Systembolaget.
 Vi stod i kö där minst en kvart,
 ja minst en kvart.
-Men inte blev vi fulla av det, 
+Men inte blev vi fulla av det,
 men systembolaget det gick back.
 
 Men utav akvavit...
@@ -4839,7 +4840,7 @@ Don't grumble, give a whistle
 And this'll help things turn out for the best...
 
 And...always look on the bright side of life...
-Always look on the light side of life... 
+Always look on the light side of life...
 
 If  life seems jolly rotten
 There's something you've forgotten
@@ -4847,7 +4848,7 @@ And that's to laugh and smile and dance and sing. When you're feeling in the dum
 Don't be silly chumps, ust purse your lips and whistle - that's the thing.
 
 And...always look on the bright side of life...
-Always look on the light side of life... 
+Always look on the light side of life...
 
 For life is quite absurd
 And death's the final word
@@ -4856,7 +4857,7 @@ Forget about your sin - give the audience a grin
 Enjoy it - it's your last chance anyhow.
 
 So always look on the bright side of death
-Just before you draw your terminal breath 
+Just before you draw your terminal breath
 
 Life's a piece of shit
 When you look at it
@@ -4937,7 +4938,7 @@ där de härliga lagrarna gro!
 Hurra!
 \end{parse lines}
 
-\newpage 
+\newpage
 
 \subsection{Brevet från kolonien}
 \textit{Mel: Brevet från kolonien}\\
@@ -4991,11 +4992,11 @@ men nu ska vi ut och bränna grannbaracken!
 \index[alfa]{Incestvisan}
 \index[anfa]{Först träffade jag Marie-Louise...}\textit{Skriven av Cornelis Vreeswijk}\\
 \begin{parse lines}[\noindent]{#1\\}
-Först träffade jag Marie-Louise 
-och jösses vad jag blev kär. 
+Först träffade jag Marie-Louise
+och jösses vad jag blev kär.
 Vi tänkte väl förlova oss, men min pappa sa tyvärr.
-Håll fingrarna ifrån den damen min son 
-och sky henne som pest. 
+Håll fingrarna ifrån den damen min son
+och sky henne som pest.
 För du och hon har samma far och då blir det incest.
 
 Sen träffade jag Linnea och vi prasslade en tid.
@@ -5122,7 +5123,7 @@ vattenfågelns lek kring fjärd och ö. :$\vert\vert$
 \vfill
 \newpage
 \noindent\textit{Följande sidor kan användas för att lägga till visor du saknar i denna bok}
-\newpage 
+\newpage
 \fillInPages{11}
 
 
